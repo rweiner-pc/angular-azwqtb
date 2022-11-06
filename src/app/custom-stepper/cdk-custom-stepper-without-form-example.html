@@ -1,0 +1,31 @@
+<example-custom-stepper [linear]="true">
+  <cdk-step label="Step 1" [stepControl]="firstFormGroup">
+    <label for="stepOneInput">Step 1 input</label>
+    <form [formGroup]="firstFormGroup">
+      <input
+        placeholder="Input"
+        formControlName="firstControl"
+        id="stepOneInput"
+        required
+      />
+    </form>
+  </cdk-step>
+  <cdk-step label="Step 2" [stepControl]="secondFormGroup">
+    <label for="stepTwoInput">Step 2 input</label>
+    <form [formGroup]="secondFormGroup">
+      <input
+        placeholder="Input"
+        formControlName="secondControl"
+        id="stepTwoInput"
+        required
+      />
+    </form>
+  </cdk-step>
+  <cdk-step label="Step 3"> <p>This is any content of "Step 3"</p> </cdk-step>
+  <cdk-step label="Step 4"> <p>This is any content of "Step 4"</p> </cdk-step>
+  <cdk-step label="Step 5"> <p>This is any content of "Step 4"</p> </cdk-step>
+</example-custom-stepper>
+
+<!-- Copyright 2020 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->

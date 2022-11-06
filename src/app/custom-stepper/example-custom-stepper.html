@@ -1,0 +1,43 @@
+<section>
+  <div
+    class="pc-progress"
+    style="margin-left: auto; margin-right: auto; max-width: 600px"
+  >
+    <div class="pc-progress-visual">
+      <ng-container *ngFor="let step of steps; let i = index">
+        <div
+          [ngClass]="checkProgressStepState(step, i)"
+          (click)="selectStepByIndex(i)"
+        ></div>
+        <div
+          *ngIf="steps.length - 1 !== i"
+          [ngClass]="checkProgressLineState(step, i)"
+        ></div>
+      </ng-container>
+    </div>
+    <div class="pc-progress-key">
+      <ng-container *ngFor="let step of steps; let i = index">
+        <div [ngClass]="checkProgressTextState(step, i)">{{step.label}}</div>
+      </ng-container>
+    </div>
+  </div>
+
+  <div [ngTemplateOutlet]="selected ? selected.content : null"></div>
+
+  <!-- <footer class="example-step-navigation-bar">
+    <button class="example-nav-button" cdkStepperPrevious>&larr;</button>
+    <button
+      class="example-step"
+      [class.example-active]="selectedIndex === i"
+      *ngFor="let step of steps; let i = index"
+      (click)="selectStepByIndex(i)"
+    >
+      Step {{ i + 1 }}
+    </button>
+    <button class="example-nav-button" cdkStepperNext>&rarr;</button>
+  </footer> -->
+</section>
+
+<!-- Copyright 2020 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
